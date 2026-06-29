@@ -1,11 +1,9 @@
-import { useState } from "react";
 import { ArrowRight } from "lucide-react";
 import logo from "../assets/logo.png";
 
-export default function Game() {
-  const [showGame, setShowGame] = useState(false);
+export default function Game({ showGamePage, setShowGamePage }) {
 
-  if (showGame) {
+  if (showGamePage) {
     return (
       <section className="bg-white px-4 py-6 sm:px-6 lg:px-6 lg:py-8">
         <div className="flex flex-col items-center">
@@ -27,7 +25,7 @@ export default function Game() {
           </div>
 
           <button
-            onClick={() => setShowGame(false)}
+            onClick={() => setShowGamePage(false)}
             className="mt-6 text-center text-[16px] font-medium text-[#3155FF] underline sm:text-[18px] lg:text-[20px]"
           >
             Take a look to our features games
@@ -87,7 +85,7 @@ export default function Game() {
         <p className="text-[18px] text-[#555555] sm:text-[22px] lg:text-[26px]">
           Still more?{" "}
           <button
-            onClick={() => setShowGame(true)}
+            onClick={() => setShowGamePage(true)}
             className="font-extrabold text-[#3155FF] underline underline-offset-2"
           >
             Take a look to our features games

@@ -7,20 +7,26 @@ import Feedback from "./components/Feedback";
 import Ready from "./components/Ready";
 import Footer from "./components/Footer";
 import Game from "./components/Game";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 
 function App() {
+   const [showGamePage, setShowGamePage] = useState(false);
+
    useEffect(() => {
     window.scrollTo(0, 0);
-  }, []);
+  }, [showGamePage]);
+  if (showGamePage) {
+    return <Game showGamePage={showGamePage} setShowGamePage={setShowGamePage} />;
+  }
+
   return (
     <div className="min-h-screen w-full overflow-x-hidden bg-white text-[#111]">
       <Navbar />
       <Hero />
       <Trusted />
       <Classroom />
-      <Game />
+      <Game  showGamePage={showGamePage} setShowGamePage={setShowGamePage} />
       <HowWorks />
       <Feedback />
       <Ready />
