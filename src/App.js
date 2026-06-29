@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Trusted from "./components/Trusted";
+import Classroom from "./components/Classroom";
+import HowWorks from "./components/HowWorks";
+import Feedback from "./components/Feedback";
+import Ready from "./components/Ready";
+import Footer from "./components/Footer";
+import Game from "./components/Game";
+import { useEffect } from "react";
+
 
 function App() {
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen w-full overflow-x-hidden bg-white text-[#111]">
+      <Navbar />
+      <Hero />
+      <Trusted />
+      <Classroom />
+      <Game />
+      <HowWorks />
+      <Feedback />
+      <Ready />
+      <Footer />
     </div>
   );
 }
